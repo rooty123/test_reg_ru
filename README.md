@@ -12,5 +12,14 @@
 * Размер диска с учетом формата хранения в elasticsearch и его требования по наличию свободного места для аллокации
 
 
+### 2. Graylog extractors
 
+Для выделения данных из полей у нас уже настроены похожие паттерны и конвертеры:
+
+* Remote Address: "(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})
+* Request Timestamp:    regex_value: .+?\[(.+?)\], Converters:     date_format: dd/MMM/YYYY:HH:mm:ss Z
+* Response Bytes:    regex_value: .+?HTTP/\S+" \d+ (\d+)
+* Response Status: .+?HTTP/\S+" (\d+)
+* Request Path: .+?"\S+ (\S+).+"
+* Request Verb: .+\[.+\] "(\S+)
 
