@@ -1,0 +1,14 @@
+stages:
+    - build
+
+build_job:
+    stage: build
+    script:
+        - docker-compose build
+    allow_failure: false
+    only:
+        refs:
+            - changes
+        changes:
+            - "Dockerfile.web"
+            - "/path/to/python"
